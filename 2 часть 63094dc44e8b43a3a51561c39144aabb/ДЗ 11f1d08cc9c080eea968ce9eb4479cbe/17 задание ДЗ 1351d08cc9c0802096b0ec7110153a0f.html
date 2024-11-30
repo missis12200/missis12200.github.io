@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>17 задание ДЗ</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1351d08c-c9c0-8020-96b0-ec7110153a0f" class="page sans"><header><h1 class="page-title">17 задание ДЗ</h1><p class="page-description"></p></header><div class="page-body"><p id="1351d08c-c9c0-80c2-86d7-d0b25f1aa101" class="">17.1</p><figure id="1351d08c-c9c0-8037-8913-d65d39440623" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_04.59.09.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_04.59.09.png"/></a></figure><figure id="1351d08c-c9c0-801f-913b-c36fc2e6216f" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_04.59.24.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_04.59.24.png"/></a></figure><p id="1351d08c-c9c0-807a-a0cd-f649f8b5155b" class="">17.2 -</p><p id="1351d08c-c9c0-80b7-9cd9-ea9e4046a7cd" class="">17.3</p><figure id="1351d08c-c9c0-801a-9c71-cccb2e79fcf5" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.09.35.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.09.35.png"/></a></figure><figure id="1351d08c-c9c0-807b-9cab-d046ff85f4bd" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.11.12.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.11.12.png"/></a></figure><p id="1351d08c-c9c0-805c-8c3e-c8d62ac1aa2d" class="">17.4 -</p><p id="1351d08c-c9c0-80f0-8569-c4c5782931b0" class="">17.5</p><figure id="1351d08c-c9c0-8080-a518-fd4537e2d0a4" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.21.29.png"><img style="width:707.9375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.21.29.png"/></a></figure><figure id="1351d08c-c9c0-80c9-940a-ff96216d891f" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.21.43.png"><img style="width:2268px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.21.43.png"/></a></figure><p id="1351d08c-c9c0-8025-9103-cc6b1e61da21" class="">17.6 - 17.7 -</p><p id="1351d08c-c9c0-8073-a54d-ea4e9271c473" class="">17.8</p><figure id="1351d08c-c9c0-80e4-8462-d40857661971" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.30.06.png"><img style="width:707.9296875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.30.06.png"/></a></figure><figure id="1351d08c-c9c0-8007-a89d-f5073800a606" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.30.20.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.30.20.png"/></a></figure><p id="1351d08c-c9c0-8010-adc3-da43f036b147" class="">17.9</p><figure id="1351d08c-c9c0-80a9-9361-eee1cd3a0686" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.37.16.png"><img style="width:707.9453125px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.37.16.png"/></a></figure><figure id="1351d08c-c9c0-80c7-a75c-dae60648251b" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.37.31.png"><img style="width:2274px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.37.31.png"/></a></figure><p id="1351d08c-c9c0-806b-9b6b-fb2064ad1914" class="">17.10</p><figure id="1351d08c-c9c0-801b-97e9-cefbbdfc38cd" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.39.38.png"><img style="width:707.9609375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.39.38.png"/></a></figure><figure id="1351d08c-c9c0-800a-8c95-c973c89b6a05" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.39.59.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.39.59.png"/></a></figure><figure id="1351d08c-c9c0-80ad-8a73-d123c3f0a7f7" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.40.21.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.40.21.png"/></a></figure><p id="1351d08c-c9c0-8023-a447-ffd5bb375fda" class="">17.11 -</p><p id="1351d08c-c9c0-809d-9707-ffec2388c16e" class="">17.12</p><figure id="1351d08c-c9c0-8021-b5e7-f9b5a04f27f5" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.42.40.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.42.40.png"/></a></figure><figure id="1351d08c-c9c0-8086-aa1d-ed4a4d19ccf0" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.42.57.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.42.57.png"/></a></figure><figure id="1351d08c-c9c0-80ae-8713-d640a991be48" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.43.16.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.43.16.png"/></a></figure><p id="1351d08c-c9c0-80a0-b9f4-ccfa18d59fbf" class="">17.13</p><figure id="1351d08c-c9c0-800d-a0fe-f6d5c02aa103" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.52.50.png"><img style="width:707.921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.52.50.png"/></a></figure><figure id="1351d08c-c9c0-80c4-98a5-c684dca3ff00" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.53.04.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.53.04.png"/></a></figure><p id="1351d08c-c9c0-802b-a3dd-d52096bd3bc9" class="">17.14</p><figure id="1351d08c-c9c0-8089-9908-efe303221a80" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.56.33.png"><img style="width:707.96875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.56.33.png"/></a></figure><figure id="1351d08c-c9c0-8080-848f-de960cf44711" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.56.52.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.56.52.png"/></a></figure><p id="1351d08c-c9c0-80ae-9adf-e502251b58cd" class="">17.15</p><figure id="1351d08c-c9c0-80e4-b7de-ce91df3d5ad9" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.59.24.png"><img style="width:707.9609375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.59.24.png"/></a></figure><figure id="1351d08c-c9c0-808a-97f8-ec8b93f57d41" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.59.39.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_05.59.39.png"/></a></figure><p id="1351d08c-c9c0-806a-9211-e42565c821e3" class="">17.16</p><figure id="1351d08c-c9c0-80df-be40-d85ccb33a0f0" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.03.21.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.03.21.png"/></a></figure><figure id="1351d08c-c9c0-80a0-b5ee-c174bbf62f6c" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.03.32.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.03.32.png"/></a></figure><p id="1351d08c-c9c0-8057-9435-f078c9e2ee83" class="">17.17</p><figure id="1351d08c-c9c0-80ae-b955-deac0282ccab" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.04.23.png"><img style="width:707.953125px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.04.23.png"/></a></figure><figure id="1351d08c-c9c0-80d6-882b-dd296d5ff2af" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.04.37.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.04.37.png"/></a></figure><p id="1351d08c-c9c0-806e-a86e-daa9c5dbe739" class="">17.18</p><figure id="1351d08c-c9c0-80fb-8d82-e21e59e75571" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.05.36.png"><img style="width:707.96875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.05.36.png"/></a></figure><figure id="1351d08c-c9c0-8031-a003-dfb556b3edab" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.05.49.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.05.49.png"/></a></figure><p id="1351d08c-c9c0-80b8-8030-e5c5bf6b5d8f" class="">17.19</p><figure id="1351d08c-c9c0-803d-b384-ec433a5c95ae" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.14.38.png"><img style="width:707.96875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.14.38.png"/></a></figure><figure id="1351d08c-c9c0-800e-8df6-d23e04328945" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.14.55.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.14.55.png"/></a></figure><figure id="1351d08c-c9c0-8044-947b-c98826574b34" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.15.21.png"><img style="width:708px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.15.21.png"/></a></figure><p id="1351d08c-c9c0-8062-abc2-db9532bcec40" class="">17.20</p><figure id="1351d08c-c9c0-8037-92b7-db4d12c88f85" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.17.13.png"><img style="width:708px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.17.13.png"/></a></figure><figure id="1351d08c-c9c0-800a-912c-cab1b56064f8" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.18.15.png"><img style="width:2278px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.18.15.png"/></a></figure><p id="1351d08c-c9c0-803a-92c5-d0ecd1195351" class="">17.21 -</p><p id="1351d08c-c9c0-8021-bee1-ebf8911415ef" class="">17.22</p><figure id="1351d08c-c9c0-8035-b5f3-e3334ce5faae" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.25.05.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.25.05.png"/></a></figure><figure id="1351d08c-c9c0-80a5-a9ed-cbf676577cf4" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.25.16.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.25.16.png"/></a></figure><p id="1351d08c-c9c0-8088-9d51-d4ba9e0973e7" class="">17.23</p><figure id="1351d08c-c9c0-80ec-a578-d8d6370add0d" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.28.45.png"><img style="width:707.9609375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.28.45.png"/></a></figure><figure id="1351d08c-c9c0-802d-98dc-dad25248eedd" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.28.59.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.28.59.png"/></a></figure><p id="1351d08c-c9c0-8018-87c5-e01580679e56" class="">17.24</p><figure id="1351d08c-c9c0-8052-850c-dd163891e2b9" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.31.04.png"><img style="width:707.9375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.31.04.png"/></a></figure><figure id="1351d08c-c9c0-8031-b90f-f2fe2fd53265" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.31.17.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.31.17.png"/></a></figure><p id="1351d08c-c9c0-80d6-950f-d10f82aba4fd" class="">17.25 -</p><p id="1351d08c-c9c0-80b8-baec-c871ac8dcc44" class="">17.26</p><figure id="1351d08c-c9c0-8098-a8df-e30d4fb0cca6" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.33.01.png"><img style="width:707.9296875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.33.01.png"/></a></figure><figure id="1351d08c-c9c0-8023-8848-d8ee15980719" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.33.13.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.33.13.png"/></a></figure><p id="1351d08c-c9c0-8097-b4fc-ccdc828e5b7a" class="">17.27</p><figure id="1351d08c-c9c0-80bd-8fa7-e8b4adacd46d" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.35.59.png"><img style="width:707.9375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.35.59.png"/></a></figure><figure id="1351d08c-c9c0-8031-97b6-fa948d2eb682" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.36.26.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.36.26.png"/></a></figure><figure id="1351d08c-c9c0-80ca-bfc1-f188e30a08f8" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.36.37.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.36.37.png"/></a></figure><p id="1351d08c-c9c0-8009-b10f-c74caa58c8bb" class="">17.28</p><figure id="1351d08c-c9c0-80b5-88ed-f28810cbcc54" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.38.28.png"><img style="width:707.9609375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.38.28.png"/></a></figure><figure id="1351d08c-c9c0-8075-8776-ce1621f6a03a" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.38.43.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.38.43.png"/></a></figure><p id="1351d08c-c9c0-80c0-9a7f-d7cc9cf11e81" class="">17.29</p><figure id="1351d08c-c9c0-802b-b5e1-e4b55eff02e5" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.40.33.png"><img style="width:707.953125px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.40.33.png"/></a></figure><figure id="1351d08c-c9c0-809b-87dd-fb3ffff7f9d9" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.40.45.png"><img style="width:2270px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.40.45.png"/></a></figure><p id="1351d08c-c9c0-801e-8d5f-e46b1c6c9fb6" class="">17.30</p><figure id="1351d08c-c9c0-80e4-b046-dc11735555c9" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.43.15.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.43.15.png"/></a></figure><figure id="1351d08c-c9c0-8090-814a-d1d96394f966" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.43.36.png"><img style="width:2270px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.43.36.png"/></a></figure><p id="1351d08c-c9c0-8014-87e3-d70348fc3b38" class="">17.31</p><figure id="1351d08c-c9c0-8021-b562-cdd0fd60e093" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.44.37.png"><img style="width:707.921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.44.37.png"/></a></figure><figure id="1351d08c-c9c0-8005-b678-ded9f3a2dab3" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.44.50.png"><img style="width:2272px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_06.44.50.png"/></a></figure><p id="1351d08c-c9c0-801d-9a43-fdd74283fe16" class="">17.32</p><figure id="1351d08c-c9c0-808b-b433-cd2970be41f0" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_21.52.25.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_21.52.25.png"/></a></figure><figure id="1351d08c-c9c0-80f0-ab23-c60c7254e74e" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_21.52.40.png"><img style="width:2276px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_21.52.40.png"/></a></figure><figure id="1351d08c-c9c0-80f2-ba31-fba14ef4c257" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_21.52.55.png"><img style="width:2274px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_21.52.55.png"/></a></figure><p id="1351d08c-c9c0-8053-b023-c54c8674446c" class="">17.33 - 17.37 -</p><p id="1351d08c-c9c0-8080-8d4e-df2906243902" class="">17.38</p><figure id="1351d08c-c9c0-80b2-9efc-dc48f084eaf3" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_22.11.22.png"><img style="width:707.96875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_22.11.22.png"/></a></figure><figure id="1351d08c-c9c0-807e-b729-fd26479b781b" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_22.11.42.png"><img style="width:2276px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-05_%25D0%25B2_22.11.42.png"/></a></figure><p id="1351d08c-c9c0-8096-977f-d3f00ec7d080" class="">17.39 -</p><p id="1361d08c-c9c0-80db-8376-c2e62004a7c3" class="">17.40</p><figure id="1361d08c-c9c0-80ae-807c-dc7139ff111d" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.42.53.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.42.53.png"/></a></figure><figure id="1361d08c-c9c0-80d1-8f70-fe09d8b0bfd3" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.43.07.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.43.07.png"/></a></figure><p id="1361d08c-c9c0-807d-a924-caa909ca3c16" class="">17.41 -</p><p id="1361d08c-c9c0-8008-abd7-d4c32a67f8fc" class="">17.42</p><figure id="1361d08c-c9c0-80e8-b2b5-c5c70b76c2fb" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.46.04.png"><img style="width:707.96875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.46.04.png"/></a></figure><figure id="1361d08c-c9c0-80ff-8906-d299e581565a" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.46.19.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.46.19.png"/></a></figure><p id="1361d08c-c9c0-806a-a111-fbce91d6497f" class="">17.43</p><figure id="1361d08c-c9c0-8002-82e9-c4101d7bccc8" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.47.35.png"><img style="width:707.953125px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.47.35.png"/></a></figure><figure id="1361d08c-c9c0-80b2-a8ee-cabeb7d3df98" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.48.04.png"><img style="width:2272px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.48.04.png"/></a></figure><figure id="1361d08c-c9c0-8051-803e-d4df047cb99a" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.48.16.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.48.16.png"/></a></figure><p id="1361d08c-c9c0-8090-87e0-e131d3d7d9b2" class="">17.44 -</p><p id="1361d08c-c9c0-80a2-ad7d-e7f1c89df7ed" class="">17.45</p><figure id="1361d08c-c9c0-80f4-b534-fe05ab8f2e2d" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.54.10.png"><img style="width:707.96875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.54.10.png"/></a></figure><figure id="1361d08c-c9c0-80d4-95bb-c6a8f0d670f9" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.54.24.png"><img style="width:2272px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.54.24.png"/></a></figure><p id="1361d08c-c9c0-8040-879b-d9f698e5113d" class="">17.46</p><figure id="1361d08c-c9c0-80f9-b7de-cab02cb1131d" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.59.22.png"><img style="width:707.9609375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.59.22.png"/></a></figure><figure id="1361d08c-c9c0-805c-9478-d6ef017243a5" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.59.38.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.59.38.png"/></a></figure><figure id="1361d08c-c9c0-80aa-9f68-eae508f63aab" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.59.53.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_15.59.53.png"/></a></figure><p id="1361d08c-c9c0-80dd-b641-e46c63971d86" class="">17.47 -</p><p id="1361d08c-c9c0-8016-8cf1-f86f2b9e9d08" class="">17.48</p><figure id="1361d08c-c9c0-80ab-a2de-e7f786c56690" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.07.46.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.07.46.png"/></a></figure><figure id="1361d08c-c9c0-80f1-9c64-d720ac9e3f70" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.08.09.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.08.09.png"/></a></figure><figure id="1361d08c-c9c0-805b-8c3c-c84ac25410cc" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.08.20.png"><img style="width:2274px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.08.20.png"/></a></figure><p id="1361d08c-c9c0-806f-9fb0-f401803053ea" class="">17.49</p><figure id="1361d08c-c9c0-802b-9ff4-f45f798c6a56" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.09.44.png"><img style="width:707.9609375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.09.44.png"/></a></figure><figure id="1361d08c-c9c0-80e8-be19-f921d4191e50" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.10.00.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.10.00.png"/></a></figure><p id="1361d08c-c9c0-80f9-b45a-d170c561f9a1" class="">17.50</p><figure id="1361d08c-c9c0-803f-9736-ffab391ac7b5" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.11.04.png"><img style="width:707.9296875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.11.04.png"/></a></figure><figure id="1361d08c-c9c0-807b-b156-ee550e21511d" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.11.25.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.11.25.png"/></a></figure><p id="1361d08c-c9c0-80e7-9bf5-c638b9d6b543" class="">17.51 -</p><p id="1361d08c-c9c0-80ac-9a96-efad6f967748" class="">17.52</p><figure id="1361d08c-c9c0-8095-9c77-eed166fe5554" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.15.13.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.15.13.png"/></a></figure><figure id="1361d08c-c9c0-80b1-8459-f096f8c32e36" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.15.34.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.15.34.png"/></a></figure><figure id="1361d08c-c9c0-8081-bb71-c7e706b3464f" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.15.49.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.15.49.png"/></a></figure><p id="1361d08c-c9c0-80e3-a679-ed134d8e57aa" class="">17.53 -</p><p id="1361d08c-c9c0-80a3-99bc-e61c1cb3167e" class="">17.54</p><figure id="1361d08c-c9c0-80c5-a637-d627f88a1af3" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.22.31.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.22.31.png"/></a></figure><figure id="1361d08c-c9c0-80bd-a2db-d56740e56457" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.22.47.png"><img style="width:2272px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.22.47.png"/></a></figure><p id="1361d08c-c9c0-80c9-bd24-f46564cf5318" class="">17.55 -</p><p id="1361d08c-c9c0-800c-9aa3-e97daa4f9d35" class="">17.56</p><figure id="1361d08c-c9c0-8000-89ce-d0927bc6ef0a" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.26.19.png"><img style="width:707.953125px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.26.19.png"/></a></figure><figure id="1361d08c-c9c0-8036-b9ba-ee649e2303a5" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.26.34.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.26.34.png"/></a></figure><figure id="1361d08c-c9c0-809e-8b7b-eedeb4cad873" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.26.45.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.26.45.png"/></a></figure><p id="1361d08c-c9c0-80a5-a969-d3647758c98f" class="">17.57</p><figure id="1361d08c-c9c0-801e-b015-deb08404bc78" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.50.52.png"><img style="width:707.9765625px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.50.52.png"/></a></figure><figure id="1361d08c-c9c0-80cc-8e55-e72aedfeb11a" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.51.11.png"><img style="width:2274px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.51.11.png"/></a></figure><figure id="1361d08c-c9c0-801b-a44c-c2e80a41f93b" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.51.26.png"><img style="width:2276px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.51.26.png"/></a></figure><p id="1361d08c-c9c0-800f-9933-cd2bd0e88d14" class="">17.58 -</p><p id="1361d08c-c9c0-8010-98fd-d371a340969b" class="">17.59</p><figure id="1361d08c-c9c0-80d7-ac69-e27c76c6372b" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.55.51.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.55.51.png"/></a></figure><figure id="1361d08c-c9c0-803e-8664-d7b2f3344749" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.57.00.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.57.00.png"/></a></figure><figure id="1361d08c-c9c0-8074-b01f-f682e738f357" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.57.29.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.57.29.png"/></a></figure><p id="1361d08c-c9c0-8017-baf8-e0ad2bf39757" class="">17.60</p><figure id="1361d08c-c9c0-80bf-95d0-d2ef10832fcf" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.59.52.png"><img style="width:707.921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_16.59.52.png"/></a></figure><figure id="1361d08c-c9c0-8086-a881-dc105041ca0e" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_17.02.37.png"><img style="width:707.9921875px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_17.02.37.png"/></a></figure><p id="1361d08c-c9c0-80db-94f8-f385a5f0fe33" class="">17.61</p><figure id="1361d08c-c9c0-80af-a703-e8ac0a1d67a1" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_17.03.39.png"><img style="width:707.9375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_17.03.39.png"/></a></figure><figure id="1361d08c-c9c0-80f0-a7ec-e4c59e6c612e" class="image"><a href="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_17.04.17.png"><img style="width:707.984375px" src="17%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%94%D0%97%201351d08cc9c0802096b0ec7110153a0f/%25D0%25A1%25D0%25BD%25D0%25B8%25D0%25BC%25D0%25BE%25D0%25BA_%25D1%258D%25D0%25BA%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B0_2024-11-06_%25D0%25B2_17.04.17.png"/></a></figure><p id="1491d08c-c9c0-8018-88c2-c6221a568568" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
